@@ -10,7 +10,10 @@ object BooksRepository {
             Book(5, "Book 5", "John Doe"),
             Book(6, "Book 6", "John Doe"),
             Book(7, "Book 7", "John Doe"),
-            Book(8, "Book 8", "John Doe")
+            Book(8, "Book 8", "John Doe"),
+            Book(9, "Book 9", "John Doe"),
+            Book(10, "Book 10", "John Doe"),
+            Book(11, "Book 11", "John Doe")
         )
     }
 }

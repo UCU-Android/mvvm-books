@@ -3,6 +3,9 @@ package com.bfrachia.firstmvvmapplication
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class HomeViewModel: ViewModel() {
 
@@ -17,9 +20,12 @@ class HomeViewModel: ViewModel() {
     }
 
     fun fetchBooks() {
-        _loading.value = true
-        _books.value = BooksRepository.fetchBooks()
-        _loading.value = false
+        viewModelScope.launch {
+            _loading.value = true
+            delay(2000)
+            _books.value = BooksRepository.fetchBooks()
+            _loading.value = false
+        }
     }
 
 }
